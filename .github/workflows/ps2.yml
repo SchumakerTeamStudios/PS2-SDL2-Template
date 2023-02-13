@@ -30,8 +30,8 @@ jobs:
 
       - name: Compress binary
         run: |
-          ps2-packer export/ccleste export/ccleste.elf
-          rm -rf export/ccleste
+          ps2-packer export/main export/main.elf
+          rm -rf export/main
       - name: Upload application
         uses: actions/upload-artifact@v3
         with:
@@ -47,10 +47,10 @@ jobs:
       - name: Prepare release
         if: startsWith(github.ref, 'refs/tags/')
         run: |
-          tar -zcvf ccleste_ps2-${{ steps.tag.outputs.VERSION }}.tar.gz export
+          tar -zcvf main_ps2-${{ steps.tag.outputs.VERSION }}.tar.gz export
       - name: Release
         if: startsWith(github.ref, 'refs/tags/')
         uses: softprops/action-gh-release@v1
         with:
-          files: ccleste_ps2-${{ steps.tag.outputs.VERSION }}.tar.gz
+          files: main_ps2-${{ steps.tag.outputs.VERSION }}.tar.gz
           tag_name: ${{ steps.tag.outputs.VERSION }}
