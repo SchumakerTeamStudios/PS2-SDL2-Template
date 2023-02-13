@@ -6,7 +6,7 @@ env:
   BUILD_TYPE: Release
 
 jobs:
-  psp:
+  ps2:
     name: Build (PS2)
     runs-on: ubuntu-latest
     container: ps2dev/ps2dev:latest
