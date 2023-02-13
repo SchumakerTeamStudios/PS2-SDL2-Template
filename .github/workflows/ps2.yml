@@ -17,7 +17,7 @@ jobs:
       - name: Install build dependencies
         run: |
           apk update
-          apk add gmp mpc1 mpfr4 make cmake
+          apk add gcc mpfr4 make cmake patch git texinfo flex bison gettext wget gsl gmp zlib mpfr mpc
       - name: Configure project
         run: |
           cmake -S . \
