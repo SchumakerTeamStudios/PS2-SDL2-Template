@@ -17,8 +17,6 @@ include(get_SDL2)
 
 get_SDL2("2.26.0")
 get_SDL2_mixer("2.6.2")
-getSDL2_image("2.")
-endif()
 
 set(GUI_TYPE "")
 
